@@ -1,0 +1,35 @@
+Git Setup https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html
+
+Initialize a Git Repository
+
+Add files to the repository
+
+Unstage 1 file
+
+Commit the file
+
+Add a remote
+
+Undo changes to a particular file
+
+Push changes to Github
+
+Clone the repository
+
+Add changes to one of the copies and pull the changes in the other.
+
+Check differences between a file and its staged version
+
+Ignore a few files to be checked in
+
+Create a new branch.
+
+Diverge them with commits
+
+Edit the same file at the same line on both branches and commit
+
+Try merging and resolve merge conflicts
+
+Stash the changes and pop them
+
+Add the following code to your .bashrc file : color_prompt="yes" parse_git_branch(){ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' }if [ "$color_prompt" = yes ]; then PS1='\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ ' else PS1='\u@\h:\W $(parse_git_branch)\$ ' fi unset color_prompt force_color_prompt
