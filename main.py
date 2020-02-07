@@ -11,6 +11,7 @@ def createDoc(quesfileName: str,allImages: List[str]):
         questions = list(filter(lambda x: True if(x!='\n') else False,fileList))
         doc = docx.Document()
         imageIdx = 0
+        print(allImages)
         for x in range(len(questions)):
             quesParaObj = doc.add_paragraph('Question: '+str(x+1)+":")
             quesParaObj.add_run('\n')
@@ -32,9 +33,9 @@ def getImagesName() -> List[str]:
     
     # Get all Images names
     allImages = os.listdir(imagesPath)
-    
+
     # Sort Images according to question number
-    allImages.sort(key= lambda x: int(re.split("[_.]",x)[1]))
+    allImages.sort(key= lambda x: (int(re.split("[_.]",x)[1]), int(re.split("[_.]",x)[2])))
 
     return allImages
 
