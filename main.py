@@ -11,7 +11,7 @@ def createDoc(quesfileName: str,allImages: List[str]):
         questions = list(filter(lambda x: True if(x!='\n') else False,fileList))
         doc = docx.Document()
         imageIdx = 0
-        print(allImages)
+        # print(allImages)
         for x in range(len(questions)):
             quesParaObj = doc.add_paragraph('Question: '+str(x+1)+":")
             quesParaObj.add_run('\n')
@@ -20,6 +20,8 @@ def createDoc(quesfileName: str,allImages: List[str]):
                 # print(allImages[imageIdx],imageIdx)
                 doc.add_picture('image/'+allImages[imageIdx],width=Inches(5))
                 imageIdx += 1
+        doc.save('assignment.docx')
+        return True
 
         doc.save('assignment.docx')
         return True
